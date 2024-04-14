@@ -363,4 +363,7 @@ Temporary Items
 .history
 .ionide
 
+### Didn't want to keep pushing the pdf during edits
+*.pdf
+
 # End of https://www.toptal.com/developers/gitignore/api/latex,macos,visualstudiocode
