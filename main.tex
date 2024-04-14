@@ -16,19 +16,19 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{fontawesome}
+\usepackage{lato}
+
 \input{glyphtounicode}
 
 
 %----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
+% Set the default text color to black for all text to ensure good contrast
+\usepackage{xcolor}
+\definecolor{textcolor}{HTML}{000000}
 
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
+% Apply the text color
+\color{textcolor}
 
 
 \pagestyle{fancy}
@@ -103,15 +103,23 @@
 
 \begin{document}
 
+%-----------Contact Info-----------
+
 \begin{center}
-  \textbf{\Huge \scshape Nigel Marshal} \\ \vspace{1pt}
-  \small +123456789 $|$ \href{mailto:nigelmarshal@gmail.com}{\underline{nigelmarshal@gmail.com}} $|$
-  \href{https://www.nigelmarshal.com/}{\underline{nigelmarshal.com}} $|$
-  \href{https://github.com/NigelMarshal}{\underline{github.com/NigelMarshal}}
+  \textbf{\Huge \scshape Nigel Marshal} \\ \vspace{3pt}
+  \small
+  \faMobile \hspace{.5pt} \href{tel:+123456789}{+123456789}
+  $|$
+  \faEnvelope \hspace{.5pt} \href{mailto:nigelmarshal@gmail.com}{nigelmarshal@gmail.com}
+  $|$
+  \faGithub \hspace{.5pt} \href{https://github.com/NigelMarshal}{github.com/NigelMarshal}
+  $|$
+  \faGlobe \hspace{.5pt} \href{https://nigelmarshal.com}{nigelmarshal.com}
+  $|$
 \end{center}
 
-%-----------EXPERIENCE-----------
-\section{Professional Experience}
+%-----------WORK EXPERIENCE-----------
+\section{Work Experience}
 \resumeSubHeadingListStart
 
 \resumeSubheading
