@@ -1,0 +1,181 @@
+%-------------------------
+% Resume in Latex
+% Author : Nigel Marshal
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\begin{center}
+  \textbf{\Huge \scshape Nigel Marshal} \\ \vspace{1pt}
+  \small +123456789 $|$ \href{mailto:nigelmarshal@gmail.com}{\underline{nigelmarshal@gmail.com}} $|$
+  \href{https://www.nigelmarshal.com/}{\underline{nigelmarshal.com}} $|$
+  \href{https://github.com/NigelMarshal}{\underline{github.com/NigelMarshal}}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Professional Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Ajar}{Dubai, UAE}
+{Software Engineer}{May 2022 -- Present}
+\resumeItemListStart
+\resumeItem{Directed major enhancements across 80\% of the entire platform as the Directly Responsible Individual (DRI), implementing key features with full CRUD functionality.}
+\resumeItem{Led cross-platform integration between React \& Angular for feature parity, significantly elevating user experience and data interaction capabilities.}
+\resumeItem{Incorporated automation testing with Playwright and GitHub actions workflows for CI/CD pipelines, expediting release cycles and reducing bug discovery time by 35\%. This improved code quality \& streamlined the deployment process.
+}
+\resumeItem{Implemented the integration of Facebook, Snapchat, and Google Tag Manager event tracking for KSA marketing campaigns, enhancing strategy with agencies to boost high-value client acquisitions by 20\%. and elevating campaign ROI.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Freelance Front-end Developer}{Dubai, UAE}
+{Self-Employed}{April 2021 -- April 2022}
+\resumeItemListStart
+\resumeItem{Designed and developed SEO-optimized, responsive websites tailored to a diverse clientele, significantly enhancing user experience for small businesses and personal portfolios.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Abu Dhabi TAMM}{Abu Dhabi, UAE}
+{Front-end Developer}{December 2019 -- March 2021}
+\resumeItemListStart
+\resumeItem{Designed and implemented 12+ government entity Sitecore websites for the Abu Dhabi Government TAMM Project, playing a key role in the public digitization efforts for the Abu Dhabi public as part of specialized SCRUM teams.}
+\resumeItem{Constructed and maintained custom modular HTML5 and ES6/ES7 JavaScript components, allowing customizations for alignment with stakeholder branding themes and enhanced integration into multiple government Sitecore subsites.}
+\resumeItem{Created and maintained thorough documentation for designed modular components and subsites, facilitating easy access and comprehension by 10+ remote teams and management via a development wiki on Jira Confluence.}
+\resumeItemListEnd
+
+\resumeSubheading
+{dubizzle}{Dubai, UAE}
+{Front-end Engineer for OLX MENA}{January 2019 -- November 2019}
+\resumeItemListStart
+\resumeItem{Served as the sole front-end developer for projects across eight MENA countries, including Lebanon, Egypt, and Oman.}
+\resumeItem{Led the front-end implementation of the product’s paid ads subscription model, achieving a 50\% increase in user ad reach and significantly enhancing company revenue for the Middle East Region.}
+\resumeItem{Collaborated on a strategic code migration from a custom PHP framework to React, working with a 5-member European remote team to boost codebase maintainability, enhance team efficiency and promote knowledge sharing.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Red Blue Blur Ideas (RBBi)}{Dubai, UAE}
+{UX Specialist \& Developer}{September 2015 -- March 2018}
+\resumeItemListStart
+\resumeItem{Developed responsive websites using Wordpress, HTML5 and CSS3, ensuring top-quality solutions. Led outsourced teams for Banking and Real Estate projects, achieving over 95\% client satisfaction with timely, quality deliveries.}
+\resumeItem{Implemented a hybrid approach as project manager and developer, overseeing client communications, updates, change requests and troubleshooting. This approach led to elevated client satisfaction and fostered enduring connections.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Heriot-Watt University}{Dubai, United Arab Emirates}
+{Bachelor of Science in Computer Systems(Graduated with distinction)}{November 2015}
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+        \textbf{Languages}{: JavaScript/TypeScript, HTML5, CSS3} \\
+        \textbf{Frameworks/Libraries}{: React, Angular, Bootstrap, Tailwind, RxJS, Cypress, Playwright} \\
+        \textbf{Tools}{: npm, git, RESTful APIs, Agile Methodologies}
+        }}
+\end{itemize}
+
+\end{document}
