@@ -69,8 +69,8 @@
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
+      \textbf{#1} & #2 \\  % Job title in bold, dates in normal text
+      \textbf{\small#3} & \small #4 \\  % Job position in bold, small font, dates in normal small font
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -126,45 +126,51 @@
 {Ajar}{Dubai, UAE}
 {Software Engineer}{May 2022 -- Present}
 \resumeItemListStart
-\resumeItem{Directed major enhancements across 80\% of the entire platform as the Directly Responsible Individual (DRI), implementing key features with full CRUD functionality.}
-\resumeItem{Led cross-platform integration between React \& Angular for feature parity, significantly elevating user experience and data interaction capabilities.}
-\resumeItem{Incorporated automation testing with Playwright and GitHub actions workflows for CI/CD pipelines, expediting release cycles and reducing bug discovery time by 35\%. This improved code quality \& streamlined the deployment process.
-}
-\resumeItem{Implemented the integration of Facebook, Snapchat, and Google Tag Manager event tracking for KSA marketing campaigns, enhancing strategy with agencies to boost high-value client acquisitions by 20\%. and elevating campaign ROI.}
+\resumeItem{Orchestrated major platform enhancements, achieving full CRUD functionality and improving 80\% of system features as the Directly Responsible Individual (DRI)}
+\resumeItem{Engineered cross-platform integration between React and Angular to achieve feature parity, enhancing user experience and data interaction capabilities}
+\resumeItem{Established CI/CD pipelines integrating Playwright and GitHub Actions, reducing bug discovery time by 35\% and accelerating release cycles}
+\resumeItem{Designed and deployed event tracking with Facebook, Snapchat, and Google Tag Manager for KSA marketing campaigns, increasing high-value client acquisitions by 20\% and improving campaign ROI}
+\resumeItem{Led frontend team and Agile project management initiatives, driving over 80\% of UI development with a focus on UX improvements, system security, and technical debt reduction}
 \resumeItemListEnd
+
 
 \resumeSubheading
 {Freelance Front-end Developer}{Dubai, UAE}
 {Self-Employed}{April 2021 -- April 2022}
 \resumeItemListStart
-\resumeItem{Designed and developed SEO-optimized, responsive websites tailored to a diverse clientele, significantly enhancing user experience for small businesses and personal portfolios.}
+\resumeItem{Crafted SEO-optimized, responsive websites and integrated analytics solutions, enhancing user engagement and digital presence for diverse clients including small businesses and personal portfolios}
+\resumeItem{Troubleshot and optimized web performance issues, resulting in increased client retention and satisfaction by ensuring superior site functionality and user experience}
 \resumeItemListEnd
+
 
 \resumeSubheading
 {Abu Dhabi TAMM}{Abu Dhabi, UAE}
 {Front-end Developer}{December 2019 -- March 2021}
 \resumeItemListStart
-\resumeItem{Designed and implemented 12+ government entity Sitecore websites for the Abu Dhabi Government TAMM Project, playing a key role in the public digitization efforts for the Abu Dhabi public as part of specialized SCRUM teams.}
-\resumeItem{Constructed and maintained custom modular HTML5 and ES6/ES7 JavaScript components, allowing customizations for alignment with stakeholder branding themes and enhanced integration into multiple government Sitecore subsites.}
-\resumeItem{Created and maintained thorough documentation for designed modular components and subsites, facilitating easy access and comprehension by 10+ remote teams and management via a development wiki on Jira Confluence.}
+\resumeItem{Architected and deployed 12+ Sitecore websites for Abu Dhabi government entities, enhancing public digital access and contributing to the digital transformation of government services}
+\resumeItem{Engineered custom HTML5 and JavaScript ES6/ES7 components, aligning with stakeholder branding requirements and enhancing platform interoperability and performance across government domains}
+\resumeItem{Authored comprehensive documentation for modular components and systems, streamlining project onboarding and collaboration for over 10 remote teams}
 \resumeItemListEnd
+
 
 \resumeSubheading
 {dubizzle}{Dubai, UAE}
 {Front-end Engineer for OLX MENA}{January 2019 -- November 2019}
 \resumeItemListStart
-\resumeItem{Served as the sole front-end developer for projects across eight MENA countries, including Lebanon, Egypt, and Oman.}
-\resumeItem{Led the front-end implementation of the product’s paid ads subscription model, achieving a 50\% increase in user ad reach and significantly enhancing company revenue for the Middle East Region.}
-\resumeItem{Collaborated on a strategic code migration from a custom PHP framework to React, working with a 5-member European remote team to boost codebase maintainability, enhance team efficiency and promote knowledge sharing.}
+\resumeItem{Spearheaded front-end development for multi-country projects across eight MENA countries, optimizing digital platforms for major regional markets}
+\resumeItem{Directed the implementation of a paid ads subscription model, doubling ad reach and boosting regional revenue by over 50\%}
+\resumeItem{Orchestrated a strategic migration from a custom PHP framework to React, enhancing maintainability and efficiency in collaboration with a 5-member European remote team}
 \resumeItemListEnd
+
 
 \resumeSubheading
 {Red Blue Blur Ideas (RBBi)}{Dubai, UAE}
-{UX Specialist \& Developer}{September 2015 -- March 2018}
+{Front-end Developer}{September 2015 -- March 2018}
 \resumeItemListStart
-\resumeItem{Developed responsive websites using Wordpress, HTML5 and CSS3, ensuring top-quality solutions. Led outsourced teams for Banking and Real Estate projects, achieving over 95\% client satisfaction with timely, quality deliveries.}
-\resumeItem{Implemented a hybrid approach as project manager and developer, overseeing client communications, updates, change requests and troubleshooting. This approach led to elevated client satisfaction and fostered enduring connections.}
+\resumeItem{Developed and managed responsive website projects using WordPress, HTML5, and CSS3, achieving over 95\% client satisfaction through superior delivery and project management}
+\resumeItem{Pioneered a hybrid project management and development approach, boosting client communication and satisfaction, thereby fostering long-term client relationships}
 \resumeItemListEnd
+
 
 \resumeSubHeadingListEnd
 
@@ -178,12 +184,20 @@
 
 %-----------SKILLS-----------
 \section{Skills}
-\begin{itemize}[leftmargin=0.15in, label={}]
+\begin{itemize}[leftmargin=0.15in, label={}, itemsep=1pt, parsep=1pt] % Decreased spacing
   \small{\item{
-        \textbf{Languages}{: JavaScript/TypeScript, HTML5, CSS3} \\
-        \textbf{Frameworks/Libraries}{: React, Angular, Bootstrap, Tailwind, RxJS, Cypress, Playwright} \\
-        \textbf{Tools}{: npm, git, RESTful APIs, Agile Methodologies}
+        \textbf{Languages \& Frameworks}{: JavaScript (ES6+), TypeScript, HTML5, CSS3, SASS, React, Angular, Next.js, Redux}
+        }}
+        \small{\item{
+        \textbf{Testing \& Performance Tools}{: Cypress, Playwright, Jest, Webpack, Babel}
+        }}
+        \small{\item{
+        \textbf{DevOps \& Collaboration Tools}{: Git, Docker, Jenkins, Agile Methodologies (including Scrum)}
+        }}
+        \small{\item{
+        \textbf{APIs \& Optimization Techniques}{: RESTful APIs, GraphQL, Code Splitting, Lazy Loading, Server-Side Rendering}
         }}
 \end{itemize}
+
 
 \end{document}
