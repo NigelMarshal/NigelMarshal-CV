@@ -2,6 +2,10 @@
 
 Created a lil repo to have a bit of a prettified CV using LaTeX. Switched to editing it on VSCode instead of Overleaf...because.
 
+
+<img width="1458" alt="Screenshot 2024-04-15 at 6 20 57 PM" src="https://github.com/NigelMarshal/NigelMarshal-CV/assets/11574237/eb70979b-3161-4acc-b35e-78fd6d660eb8">
+
+
 ## Get the ball rollin'
 
 `pdflatex cv.tex` -> Generates the pdf
