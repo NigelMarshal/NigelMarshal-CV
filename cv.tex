@@ -52,8 +52,9 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-8pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
 
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
@@ -76,6 +77,7 @@
 
 
 
+
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
@@ -84,6 +86,14 @@
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\resumeEducation}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\  % University name in bold, location and date on the right
+      #3 \textbf{#4} & \small #5 \\  % Degree and distinction details on the left, small date on the right
+    \end{tabular*}\vspace{-7pt}
+}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -94,36 +104,30 @@
 %-----------Contact Info-----------
 
 \begin{center}
-  \textbf{\Huge \scshape Nigel Marshal} \\ \vspace{3pt}
+  \textbf{\Huge Nigel Marshal} \\ \vspace{4pt}
   \small
-  \faMobile \hspace{.5pt} \href{tel:+123456789}{+123456789}
-  $|$
-  \faEnvelope \hspace{.5pt} \href{mailto:nigelmarshal@gmail.com}{nigelmarshal@gmail.com}
-  $|$
-  \faGithub \hspace{.5pt} \href{https://github.com/NigelMarshal}{github.com/NigelMarshal}
-  $|$
-  \faGlobe \hspace{.5pt} \href{https://nigelmarshal.com}{nigelmarshal.com}
-  $|$
+  \faEnvelope{} \hspace{1pt} \href{mailto:nigelmarshal@gmail.com}{nigelmarshal@gmail.com} \hspace{5pt}
+  \faGithub{} \hspace{1pt} \href{https://github.com/NigelMarshal}{github.com/NigelMarshal} \hspace{5pt}
+  \faGlobe{} \hspace{1pt} \href{https://nigelmarshal.com}{nigelmarshal.com}
 \end{center}
+
 
 %-----------SKILLS-----------
 \section{Skills}
 \begin{itemize}[leftmargin=0.15in, label={}, itemsep=1pt, parsep=1pt] % Decreased spacing
   \small{\item{
-        \textbf{Languages \& Frameworks}{: JavaScript (ES6+), TypeScript, HTML5, CSS3, SASS, React, Angular, Next.js, Redux}
+        \textbf{Languages \& Frameworks}{: JavaScript (ES6+), TypeScript, HTML5, CSS3, SASS, React, Angular, Next.js}
         }}
         \small{\item{
         \textbf{Testing \& Performance Tools}{: Cypress, Playwright, Jest, Webpack, Babel}
         }}
         \small{\item{
-        \textbf{DevOps \& Collaboration Tools}{: Git, Docker, Agile Methodologies (including Scrum)}
+        \textbf{UI/UX \& Design}{: Responsive Design, Material-UI, Tailwind, Adobe XD, Accessibility (WCAG)}
         }}
         \small{\item{
         \textbf{APIs \& Optimization Techniques}{: RESTful APIs, GraphQL, Lazy Loading, Server-Side Rendering}
         }}
 \end{itemize}
-
-
 
 %-----------WORK EXPERIENCE-----------
 \section{Work Experience}
@@ -184,9 +188,9 @@
 %-----------EDUCATION-----------
 \section{Education}
 \resumeSubHeadingListStart
-\resumeSubheading
-{Heriot-Watt University}{Dubai, United Arab Emirates}
-{Bachelor of Science in Computer Systems(Graduated with distinction)}{November 2015}
+\resumeEducation
+{Heriot-Watt University}{Dubai, UAE}
+{Bachelor of Science in Computer Systems}{(Graduated with distinction)}{November 2015}
 \resumeSubHeadingListEnd
 
 
