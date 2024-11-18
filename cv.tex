@@ -1,197 +1,209 @@
-%-------------------------
-% Resume in Latex
-% Author : Nigel Marshal
-%------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set main text size and page size
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[10pt,letterpaper]{article}
+% \documentclass[10pt,a4paper]{article}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set page margins
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[top=0.4in,bottom=0.4in,left=0.5in,right=0.5in]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set black background and white text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{ifthen}
+\usepackage{xcolor}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dark mode toggle: Set to true for dark mode, false for light mode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newboolean{darkmode}
+\setboolean{darkmode}{false} % Change this to true for dark mode, false for light mode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conditional color scheme based on dark mode
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifthenelse{\boolean{darkmode}}{
+    \pagecolor{black} % Dark mode: black background
+    \color{white}     % Dark mode: white text
+}{
+    \pagecolor{white} % Light mode: white background
+    \color{black}     % Light mode: black text
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% select font (comment out lines 18-26 to use Computer Modern)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{charter}
+% \usepackage[default]{lato}
+% \usepackage[sfdefault]{carlito}
+% \usepackage{tgpagella}
+% \usepackage{ebgaramond}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{plex-sans}
+% \usepackage{libertine}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% font and input encoding
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% enable lists for bullet points: itemize and \item
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{enumitem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% format hyperlinks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{fontawesome}
-\usepackage{lato}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% enable section title customization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{titlesec}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% disable text justification
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\raggedright
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% disable page numbering
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ensure that the PDF output will be all unicode and machine-readable
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{glyphtounicode}
-
-
-%----------FONT OPTIONS----------
-% Set the default text color to black for all text to ensure good contrast
-\usepackage{xcolor}
-\definecolor{textcolor}{HTML}{000000}
-
-% Apply the text color
-\color{textcolor}
-
-
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
-
-\urlstyle{same}
-
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
-
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-8pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-
-% Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% format section headings: bolding, size, white space above/below
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\  % Job title in bold, dates in normal text
-      \textbf{\small#3} & \small #4 \\  % Job position in bold, small font, dates in normal small font
-    \end{tabular*}\vspace{-7pt}
-}
+\titleformat{\section}{\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule\vspace{-6.5pt}]
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% format bullet points: size, white space above/below, white space between bullets
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\setlist[itemize]{itemsep=-2pt, leftmargin=12pt}
 
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-\newcommand{\resumeEducation}[5]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\  % University name in bold, location and date on the right
-      #3 \textbf{#4} & \small #5 \\  % Degree and distinction details on the left, small date on the right
-    \end{tabular*}\vspace{-7pt}
-}
-
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% resume starts here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-%-----------Contact Info-----------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% name
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{center}
-  \textbf{\Huge Nigel Marshal} \\ \vspace{4pt}
-  \small
-  \faEnvelope{} \hspace{1pt} \href{mailto:nigelmarshal@gmail.com}{nigelmarshal@gmail.com} \hspace{5pt}
-  \faGithub{} \hspace{1pt} \href{https://github.com/NigelMarshal}{github.com/NigelMarshal} \hspace{5pt}
-  \faGlobe{} \hspace{1pt} \href{https://nigelmarshal.com}{nigelmarshal.com}
-\end{center}
+\centerline{\Huge \href{https://www.nigelmarshal.com/}{Nigel Marshal}}
 
+\vspace{5pt}
 
-%-----------SKILLS-----------
-\section{Skills}
-\begin{itemize}[leftmargin=0.15in, label={}, itemsep=1pt, parsep=1pt] % Decreased spacing
-  \small{\item{
-        \textbf{Languages \& Frameworks}{: JavaScript (ES6+), TypeScript, HTML5, CSS3, SASS, React, Angular, Next.js}
-        }}
-        \small{\item{
-        \textbf{Testing \& Performance Tools}{: Cypress, Playwright, Jest, Webpack, Babel}
-        }}
-        \small{\item{
-        \textbf{UI/UX \& Design}{: Responsive Design, Material-UI, Tailwind, Adobe XD, Accessibility (WCAG)}
-        }}
-        \small{\item{
-        \textbf{APIs \& Optimization Techniques}{: RESTful APIs, GraphQL, Lazy Loading, Server-Side Rendering}
-        }}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% contact information
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\centerline{\href{mailto:nigelmarshal@gmail.com}{nigelmarshal@gmail.com} | \href{https://www.nigelmarshal.com/}{nigelmarshal.com} | \href{https://github.com/NigelMarshal}{github.com/NigelMarshal}}
+
+\vspace{-10pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% skills section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Skills}
+\textbf{Languages \& Frameworks:} React, Angular, Next.js, RxJS, JavaScript ES6+, TypeScript, HTML5, CSS3, SASS \\
+\textbf{Development Tools:} Webpack, Babel, Cypress, Playwright, Jest, Docker, GitHub Actions (CI/CD), Git \\
+\textbf{Methodologies \& Practices:} Agile/Scrum, Responsive Design, Accessibility (WCAG) \\
+\textbf{APIs \& Optimization:} RESTful APIs, GraphQL, Lazy Loading, Progressive Web Apps (PWA)
+\vspace{-10.5pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% experience section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Experience}
+\textbf{Frontend Software Engineer,} \href{https://joinajar.com/}{Ajar} -- Dubai, UAE \hfill May 2022 -- Mar 2024 \\
+\vspace{-1pt}
+\begin{itemize}
+  \item Coordinated the cross-platform integration between React and Angular applications, enhancing user experience for property owners, landlords, tenants and stakeholders associated with 50k+ property units
+  \item Created over 80\% of the platform's UIs as the Directly Responsible Individual (DRI), implementing comprehensive CRUD features, improving user experience, security and reducing technical debt
+  \item Designed Playwright test cases integrated with GitHub Actions, reducing bug discovery time and accelerating production deployment release cycles by 40\%
+  \item Implemented the integration of custom Facebook and Snapchat tracking events in partnership with an external agency for marketing campaigns, enabling detailed user analytics that boosted high-value client acquisition by 20\%
+  \item Migrated key frontend flows from Firebase to REST APIs, collaborating with backend teams to build optimized data-fetching methods, refactor code and ensure data integrity while swiftly resolving migration-related bugs
 \end{itemize}
 
-%-----------WORK EXPERIENCE-----------
-\section{Work Experience}
-\resumeSubHeadingListStart
-
-\resumeSubheading
-{Ajar}{Dubai, UAE}
-{Front-end Software Engineer}{May 2022 -- Present}
-\resumeItemListStart
-\resumeItem{Orchestrated major platform enhancements, achieving full CRUD functionality and improving 80\% of system features as the directly responsible individual (DRI)}
-\resumeItem{Engineered cross-platform integration between React and Angular to achieve feature parity, enhancing user experience and data interaction capabilities}
-\resumeItem{Established CI/CD pipelines integrating Playwright and GitHub Actions, reducing bug discovery time by 35\% \\ and accelerating release cycles}
-\resumeItem{Designed and deployed event tracking with Facebook, Snapchat, and Google Tag Manager for KSA marketing campaigns, increasing high-value client acquisitions by 20\% and improving campaign ROI}
-\resumeItem{Led frontend team and Agile project management initiatives, driving over 80\% of UI development with \\ a focus on UX improvements, system security, and technical debt reduction}
-\resumeItemListEnd
+\textbf{Frontend Developer \& Consultant,} \href{https:nigelmarshal.com}{Freelance Work} -- Dubai, UAE \hfill Apr 2021 -- Apr 2022 \\
+\vspace{-1pt}
+\begin{itemize}
+  \item Developed 6+ responsive websites for small businesses and personal portfolios using React, Bootstrap and Tailwind, improving search engine visibility and user engagement
+  \item Resolved web performance issues for 3+ clients, ensuring superior functionality and increasing customer retention by conducting detailed audits, optimizing load times and implementing caching strategies
+  \item Architected compelling SEO-optimized content, driving engagement and improving organic search rankings for 4+ clients by creating keyword-rich blog posts and case studies that aligned with each client's brand voice and marketing goals
+\end{itemize}
 
 
-\resumeSubheading
-{Self-Employed}{Remote and Dubai, UAE}
-{Freelance Front-end Developer}{April 2021 -- April 2022}
-\resumeItemListStart
-\resumeItem{Crafted SEO-optimized, responsive websites and integrated analytics solutions, enhancing user engagement \\ and digital presence for diverse clients including small businesses and personal portfolios}
-\resumeItem{Troubleshot and optimized web performance issues, resulting in increased client retention and satisfaction \\ by ensuring superior site functionality and user experience}
-\resumeItemListEnd
+\textbf{Frontend Developer,} \href{https://www.tamm.abudhabi/}{Abu Dhabi TAMM} -- Abu Dhabi, UAE \hfill Dec 2019 -- Mar 2021 \\
+\vspace{-1pt}
+\begin{itemize}
+  \item Built and deployed 10+ Sitecore websites for government entities, enhancing digital access and supporting Abu Dhabi's digital transformation initiative for the general public by implementing user-centric design and multilingual support
+  \item Designed custom HTML5 and JavaScript ES6/ES7 components to meet branding requirements, optimizing platform performance and interoperability by ensuring seamless integration across government domains
+  \item Published comprehensive documentation on modular components on JIRA Confluence, improving project onboarding for 7+ remote teams by providing clear guidelines on implementation, customization and troubleshooting
+  \item Charted a library of modular and customizable web components using SASS variables, HTML5 and Modern ECMAScript, enabling 7+ remote teams to create subsites with consistent branding
+\end{itemize}
 
 
-\resumeSubheading
-{Abu Dhabi TAMM}{Abu Dhabi, UAE}
-{Front-end Developer}{December 2019 -- March 2021}
-\resumeItemListStart
-\resumeItem{Coded and deployed 12+ Sitecore websites for Abu Dhabi government entities, \\ enhancing public digital access and contributing to the digital transformation of government services}
-\resumeItem{Engineered custom HTML5 and JavaScript ES6/ES7 components, aligning with stakeholder branding \\ requirements and enhancing platform interoperability and performance across government domains}
-\resumeItem{Authored comprehensive documentation for modular components and systems, streamlining project on-boarding \\ and collaboration for over 10 remote teams}
-\resumeItemListEnd
+\textbf{Frontend Engineer for OLX MENA,} \href{https://www.dubizzle.com/}{dubizzle} -- Dubai, UAE \hfill Jan 2019 -- Nov 2019 \\
+\vspace{-1pt}
+\begin{itemize}
+  \item Managed frontend development for OLX MENA across 8 major countries, optimizing digital platforms by standardizing UI components and doubling ad reach while boosting regional revenue by over 50\%
+  \item Led the implementation of a paid ad subscription model, generating a fresh revenue stream and increasing platform profitability by developing seamless checkout flows and personalized subscription tiers for advertisers
+  \item Enhanced the frontend codebase by adding new features, upgrading the Gulp build process and modernizing GitHub workflows, streamlining development and improving team efficiency
+\end{itemize}
 
 
-\resumeSubheading
-{dubizzle}{Dubai, UAE}
-{Front-end Engineer for OLX MENA}{January 2019 -- November 2019}
-\resumeItemListStart
-\resumeItem{Spearheaded front-end development for multi-country projects across eight MENA countries, optimizing \\digital platforms for major regional markets}
-\resumeItem{Directed the implementation of a paid ads subscription model, doubling ad reach and boosting regional \\revenue by over 50\%}
-\resumeItem{Orchestrated a strategic migration from a custom PHP framework to React, enhancing maintainability and efficiency in collaboration with a 5-member European remote team}
-\resumeItemListEnd
+\textbf{Frontend Developer,} \href{https://www.rbbideas.com/}{Red Blue Blur Ideas (RBBi)} -- Dubai, UAE \hfill Sept 2015 -- Mar 2018 \\
+\vspace{-1pt}
+\begin{itemize}
+  \item Created and managed responsive WordPress, HTML5 and CSS3 websites for a diverse client base across multiple industries, achieving 95\% client satisfaction through superior project management and on-time delivery
+  \item Boosted client retention with clients in retail, banking and government through a hybrid project management approach, providing regular status updates and managing change requests for 6+ projects simultaneously
+  \item Introduced Webpack workflows, BEM methodology and modern development tools, improving development, reducing deployment times by 70\% through enhanced build processes and modular coding standards
+\end{itemize}
 
 
-\resumeSubheading
-{Red Blue Blur Ideas (RBBi)}{Dubai, UAE}
-{Front-end Developer}{September 2015 -- March 2018}
-\resumeItemListStart
-\resumeItem{Developed and managed responsive website projects using WordPress, HTML5, and CSS3, achieving over \\ 95\% client satisfaction through superior delivery and project management}
-\resumeItem{Pioneered a hybrid project management and development approach, boosting client communication and satisfaction, thereby fostering long-term client relationships}
-\resumeItemListEnd
+\vspace{-10.5pt}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% education section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\resumeSubHeadingListEnd
+\section*{Education}
+\textbf{Bachelor of Science in Computer Systems,} \href{https://www.hw.ac.uk/dubai}{Heriot-Watt University} -- Dubai, UAE \hfill November 2015 \\
+(Graduated with distinction)
 
-%-----------EDUCATION-----------
-\section{Education}
-\resumeSubHeadingListStart
-\resumeEducation
-{Heriot-Watt University}{Dubai, UAE}
-{Bachelor of Science in Computer Systems}{(Graduated with distinction)}{November 2015}
-\resumeSubHeadingListEnd
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% resume ends here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
